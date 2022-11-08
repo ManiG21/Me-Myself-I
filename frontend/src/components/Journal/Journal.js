@@ -13,9 +13,11 @@ import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, f
 {/* <FontAwesomeIcon icon={solid('face-smile-beam')} /> */ }
 
 const emojis = [
-    {icon: faFaceSmileBeam, class: 'Excited'},
-    {icon: faFaceSmile, class: 'Happy'},
-    {icon: faFaceMeh, class: 'Meh'},
+    {icon: faFaceSmileBeam, class: 'excited'},
+    {icon: faFaceSmile, class: 'happy'},
+    {icon: faFaceMeh, class: 'meh'},
+    {icon: faFaceAngry, class: 'angry'},
+    {icon: faFaceSadCry, class: 'sad'},
 ]
 
 export default function Journal() {
@@ -26,10 +28,28 @@ export default function Journal() {
     const submitData = () => {
         //Send data to api using fetch
         console.log(data)
+    //     fetch("http://localhost:3030/", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type" : "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    // })
+    // .then(res => res.json())
+    // .then(res => ())
+    // setData('')
 
     }
-
+    
+ 
 // function that updates the emoji in our data
+const onClickEmoji = e => {
+    const id = e.target.dataset.id
+    // Update Journal Data with an emoji
+    setData({ ...data, emoji: emojis[id].class})
+    // Go to next step
+    setStep(1)
+}
 
     const updateData = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
@@ -45,14 +65,14 @@ export default function Journal() {
                 <FontAwesomeIcon className='Emojis Angry' icon={faFaceAngry} />
                 <FontAwesomeIcon className='Emojis Sad' icon={faFaceSadCry} />
                 <FontAwesomeIcon className='Emojis Sad' icon={faAngleDoubleLeft} /> */}
-                {emojis.map(emoji => <FontAwesomeIcon className={`Emojis ${emoji.class}`} icon={emoji.icon} /> )}
+                {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={onClickEmoji} className={`Emojis ${emoji.class}`} icon={emoji.icon} /> )}
             </div> :
             <div>
                 <form>
                     <label for = 'title'>Title Max 40 Characters</label>
-                    <input value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
+                    <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
                     <label for = 'entry'>Title Max 500 Characters</label>
-                    <textarea value={data.entry} name='entry' onChange={updateData}></textarea>
+                    <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
                     {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
                     {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
                 </form>

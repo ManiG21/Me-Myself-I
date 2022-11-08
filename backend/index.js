@@ -20,4 +20,4 @@ app.post ('/:tableName', db.addTable)
 app.put('/:tableName/:id', db.updateTable)
 
 app.delete('/:tableName/:id', db.deleteTable)
-app.listen(PORT,() => console.log('App successfully started on port', PORT))
+app.listen(PORT,() => console.log('Backend successfully started on port', PORT))

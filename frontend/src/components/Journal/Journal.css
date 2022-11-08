@@ -9,20 +9,20 @@ border: 2px solid black;
 
 }
 
-.Angry {
+.angry {
     color: red;
 }
 
-.Excited {
+.excited {
     color: goldenrod
 }
 
-.Happy {
+.happy {
     color: rgb(3, 242, 3);
 }
-.Meh {
+.meh {
     color: blue;
 }
-.Sad {
+.sad {
     color: lightskyblue;
 }
