@@ -1,6 +1,7 @@
 // import { json } from 'body-parser';
 import pg from 'pg'
-import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as dotenv from 'dotenv' 
 dotenv.config()
 const pool = new pg.Pool({
    connectionString: process.env.DATABASE_CONNECTION
