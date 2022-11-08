@@ -7,7 +7,7 @@ import Journal from './components/Journal/Journal';
 import { Routes, Route } from "react-router-dom";
 import { getAllFromTable } from './components/networkRequests';
 import React, { useEffect, useState } from 'react'
-
+import LandingPage from './components/LandingPage/LandingPage';
 
 function App() {
   const [journal, setJournal] = useState([])
