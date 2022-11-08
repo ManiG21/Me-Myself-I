@@ -1,0 +1,15 @@
+* {
+    background: #84CAE7;
+  background-image: linear-gradient( 145deg,  #037971,#84CAE7 ,  #81667A );
+  background-attachment: fixed;
+}
+
+.intro{
+    color: #F7CB15;
+    text-shadow: #417571 5px 5px 8px;;
+}
+
+.member{
+    color: #F7CB15;
+    text-shadow: black 1px 1px 5px;;
+}

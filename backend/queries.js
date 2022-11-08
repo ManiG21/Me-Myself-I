@@ -1,11 +1,9 @@
 // import { json } from 'body-parser';
 import pg from 'pg'
-
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config()
 const pool = new pg.Pool({
-    host: 'localhost',
-    user:'postgres',
-    password: 'postgres',
-    database: 'moodapp'
+   connectionString: process.env.DATABASE_CONNECTION
 });
 
 const allowTables = ['users', 'journals']
