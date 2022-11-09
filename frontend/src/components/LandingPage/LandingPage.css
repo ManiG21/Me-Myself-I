@@ -1,15 +1,26 @@
 * {
-    background: #84CAE7;
-  background-image: linear-gradient( 145deg,  #037971,#84CAE7 ,  #81667A );
+    /* background: #84CAE7; */
+  /* background-image: linear-gradient( 135deg,  #84CAE7 30%, #109648, #84CAE7 70%); */
+  /* background-image: radial-gradient(circle 250px at 60% 30%, white, yellow, lightyellow, #84CAE7); */
+  background: linear-gradient(132deg, rgb(227, 244, 253) 0.00%, #84CAE7 100.00%);
   background-attachment: fixed;
 }
 
 .intro{
-    color: #F7CB15;
-    text-shadow: #417571 5px 5px 8px;;
+    color: #84CAE7;
+    text-shadow: #F7CB15 5px 5px 8px;;
 }
 
 .member{
-    color: #F7CB15;
-    text-shadow: black 1px 1px 5px;;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: xxx-large;
+    color: #A379C9;
+    text-shadow: blue 1px 1px 3px;;
+}
+.quotes{
+    font-family: 'Fascinate', cursive;
+    font-size: xx-large;
+    color: black;
+    text-shadow: #FFEDDF 1px 1px 3px;
+    /* F0D3F7 */
 }

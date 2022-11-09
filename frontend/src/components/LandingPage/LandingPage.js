@@ -46,7 +46,7 @@ export default function LandingPage() {
         <div className="member">
           {/* make client username show up in welcome */}
           <h1> Welcome "Logged In User"</h1>
-          <h3>{quote}</h3>
+          <h3 className="quotes">"{quote}"</h3>
         </div>
       )}
     </div>
