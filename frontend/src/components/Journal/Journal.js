@@ -12,41 +12,44 @@ import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, f
 // <FontAwesomeIcon icon="fa-regular fa-face-smile-beam" />
 {/* <FontAwesomeIcon icon={solid('face-smile-beam')} /> */ }
 
-const emojis = [
-    {icon: faFaceSmileBeam, class: 'excited'},
-    {icon: faFaceSmile, class: 'happy'},
-    {icon: faFaceMeh, class: 'meh'},
-    {icon: faFaceAngry, class: 'angry'},
-    {icon: faFaceSadCry, class: 'sad'},
-]
+
 
 export default function Journal() {
     const [data, setData] = useState({})
     const [step, setStep] = useState(0)
+    const emojis = [
+        {icon: faFaceSmileBeam, class: 'excited', color: 'gold'},
+        {icon: faFaceSmile, class: 'happy', color: 'green'},
+        {icon: faFaceMeh, class: 'meh', color: 'blue'},
+        {icon: faFaceAngry, class: 'angry', color: 'red'},
+        {icon: faFaceSadCry, class: 'sad', color: 'light-blue'},
+    ]
     //Create a function to update state data based on input
     // function that submits Journal data to Api 
     const submitData = () => {
         //Send data to api using fetch
         console.log(data)
-    //     fetch("http://localhost:3030/", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type" : "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    // })
-    // .then(res => res.json())
+        fetch("http://localhost:3030/journals", {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(res => res.json())
     // .then(res => ())
-    // setData('')
+    setData('')
 
     }
     
  
 // function that updates the emoji in our data
-const onClickEmoji = e => {
-    const id = e.target.dataset.id
+const onClickEmoji = (e, id) => {
+    // const id = e.target.dataset.id
+    // const id = e.target['data-id']
     // Update Journal Data with an emoji
-    setData({ ...data, emoji: emojis[id].class})
+    setData({ ...data, emoji: emojis[id].class, color: emojis[id].color })
+    console.log(id)
     // Go to next step
     setStep(1)
 }
@@ -65,13 +68,13 @@ const onClickEmoji = e => {
                 <FontAwesomeIcon className='Emojis Angry' icon={faFaceAngry} />
                 <FontAwesomeIcon className='Emojis Sad' icon={faFaceSadCry} />
                 <FontAwesomeIcon className='Emojis Sad' icon={faAngleDoubleLeft} /> */}
-                {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={onClickEmoji} className={`Emojis ${emoji.class}`} icon={emoji.icon} /> )}
+                {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
                 <form>
-                    <label for = 'title'>Title Max 40 Characters</label>
+                    <label htmlFor = 'title'>Title Max 40 Characters</label>
                     <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
-                    <label for = 'entry'>Title Max 500 Characters</label>
+                    <label htmlFor = 'entry'>Title Max 500 Characters</label>
                     <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
                     {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
                     {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
