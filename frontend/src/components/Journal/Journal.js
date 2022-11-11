@@ -14,7 +14,7 @@ import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, f
 
 
 
-export default function Journal() {
+export default function Journal({refreshData}) {
     const [data, setData] = useState({})
     const [step, setStep] = useState(0)
     const emojis = [
@@ -37,7 +37,7 @@ export default function Journal() {
         body: JSON.stringify(data),
     })
     .then(res => res.json())
-    // .then(res => ())
+    .then(res => (refreshData))
     setData('')
 
     }
@@ -71,17 +71,19 @@ const onClickEmoji = (e, id) => {
                 {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
+                 <h1>Journal</h1>
+                <button onClick={submitData}>Post</button>
                 <form>
-                    <label htmlFor = 'title'>Title Max 40 Characters</label>
+                    {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}
                     <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
-                    <label htmlFor = 'entry'>Title Max 500 Characters</label>
+                    <break></break>
+                    {/* <label htmlFor = 'entry'>Title Max 500 Characters</label> */}
                     <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
                     {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
                     {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
                 </form>
 
-                <h1>Journal</h1>
-                <button onClick={submitData}>Post</button>
+               
             </div>}
 
     </div>
