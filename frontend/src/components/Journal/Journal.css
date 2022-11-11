@@ -26,3 +26,14 @@ border: 2px solid black;
 .sad {
     color: lightskyblue;
 }
+
+textarea {
+    width: 500px;
+    height: 500px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
