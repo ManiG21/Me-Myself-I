@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function Journal() {
-    const [data, setData] = useState({})
+export default function Journal({profile}) {
+    const [data, setData] = useState({user_id: profile.id})
     const [step, setStep] = useState(0)
     const navigate = useNavigate();
-    
+
     const emojis = [
         {icon: faFaceSmileBeam, class: 'excited', color: 'gold'},
         {icon: faFaceSmile, class: 'happy', color: 'green'},
@@ -22,7 +22,6 @@ export default function Journal() {
     // function that submits Journal data to Api 
     const submitData = () => {
         //Send data to api using fetch
-        data.entry_time = Date.now()
         fetch("http://localhost:3030/journals", {
         method: "POST",
         headers: {
@@ -32,15 +31,12 @@ export default function Journal() {
     })
     .then(res => res.json())
     .then(() => {
-        window.alert('Your Journal has been posted!!😊😊')
+        window.alert('Your Journal has been posted!!😊😊');
+        navigate('/calendar')
     })
     // .then(res => (refreshData))
-    setData('')
-
-
     }
     
- 
 // function that updates the emoji in our data
 const onClickEmoji = (e, id) => {
     // const id = e.target.dataset.id
