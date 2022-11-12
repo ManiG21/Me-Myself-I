@@ -1,22 +1,16 @@
 import { useState } from 'react'
 import './Journal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { solid} from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, faFaceSmileBeam, } from '@fortawesome/free-solid-svg-icons'
-//Frown Face emoji
-{/* <FontAwesomeIcon icon="fa-solid fa-face-frown" /> */ }
-//Exited Face emoji
-// neutral face
-//         <FontAwesomeIcon icon="fa-regular fa-face-frown" />
-// <FontAwesomeIcon icon="fa-regular fa-face-meh" /> 
-// <FontAwesomeIcon icon="fa-regular fa-face-smile-beam" />
-{/* <FontAwesomeIcon icon={solid('face-smile-beam')} /> */ }
+import { useNavigate } from "react-router-dom";
 
 
 
-export default function Journal({refreshData}) {
+export default function Journal() {
     const [data, setData] = useState({})
     const [step, setStep] = useState(0)
+    const navigate = useNavigate();
+    
     const emojis = [
         {icon: faFaceSmileBeam, class: 'excited', color: 'gold'},
         {icon: faFaceSmile, class: 'happy', color: 'green'},
@@ -28,7 +22,7 @@ export default function Journal({refreshData}) {
     // function that submits Journal data to Api 
     const submitData = () => {
         //Send data to api using fetch
-        console.log(data)
+        data.entry_time = Date.now()
         fetch("http://localhost:3030/journals", {
         method: "POST",
         headers: {
@@ -37,8 +31,12 @@ export default function Journal({refreshData}) {
         body: JSON.stringify(data),
     })
     .then(res => res.json())
-    .then(res => (refreshData))
+    .then(() => {
+        window.alert('Your Journal has been posted!!😊😊')
+    })
+    // .then(res => (refreshData))
     setData('')
+
 
     }
     
@@ -72,16 +70,18 @@ const onClickEmoji = (e, id) => {
             </div> :
             <div>
                  <h1>Journal</h1>
+                <div className='form-container'>
+                    <form>
+                        {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}
+                        <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
+                        <break></break>
+                        {/* <label htmlFor = 'entry'>Title Max 500 Characters</label> */}
+                        <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
+                        {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
+                        {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
+                    </form>
+                </div>
                 <button onClick={submitData}>Post</button>
-                <form>
-                    {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}
-                    <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
-                    <break></break>
-                    {/* <label htmlFor = 'entry'>Title Max 500 Characters</label> */}
-                    <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
-                    {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
-                    {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
-                </form>
 
                
             </div>}

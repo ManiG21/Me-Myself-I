@@ -34,6 +34,17 @@ textarea {
 
 form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
     justify-content: center;
-    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+}
+
+form input, form textarea {
+    width: 100%;
 }
