@@ -6,21 +6,57 @@
   background-attachment: fixed;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    grid-gap: 180px;
+}
+
 .intro{
-    color: #84CAE7;
-    text-shadow: #F7CB15 5px 5px 8px;;
+    color: #2A2D34;
+    text-shadow: #009DDC 1px 1px 2px;
+    font-family: 'Bubblegum Sans';
+    font-size: xx-large;
+    font-variant: small-caps;
+}
+.slogan{
+    color: #7B287D;
+    text-shadow: gold 2px 2px 2px;
+}
+
+.profilePic{
+    border-radius: 50px;
 }
 
 .member{
     font-family: 'Bubblegum Sans', cursive;
     font-size: xxx-large;
-    color: #A379C9;
-    text-shadow: blue 1px 1px 3px;;
+    color: white;
+    text-shadow: #FF0022 1px 2px 3px;
+    /* border: 1px solid red; */
+    width: 80rem;
+    
+}
+
+.Welcome{
+    word-spacing: 80px;
 }
 .quotes{
-    font-family: 'Fascinate', cursive;
+    /* font-family: 'Fascinate', cursive; */
+    font-family: 'Hachi Maru Pop', cursive;
     font-size: xx-large;
-    color: black;
-    text-shadow: #FFEDDF 1px 1px 3px;
+    color: green;
+    text-shadow: gold  1px 2px 3px;
     /* F0D3F7 */
+}
+
+.googleInfo{
+    /* border: 1px solid black; */
+    width: auto;
+    height: auto;
+    margin: 15px;
+
+
 }

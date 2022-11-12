@@ -4,9 +4,15 @@
 
 export const getDatApiNinjas = (route, query) => {
     console.log(route, query, `https://api.api-ninjas.com/v1/quotes?api_key=3h1Ig2eNjPjZEqW4UBdwbQ==SbV2SyMnNWJZQq0D`)
+    
     return fetch (`https://api.api-ninjas.com/v1/quotes?api_key=3h1Ig2eNjPjZEqW4UBdwbQ==SbV2SyMnNWJZQq0D`, {
         headers: {'X-Api-Key': '3h1Ig2eNjPjZEqW4UBdwbQ==SbV2SyMnNWJZQq0D'},
     })
     .then(res => res.json())
 }
+
+// export const getDataApiGiphy = (route, query) => {
+//     console.log(route, query, ``)
+// }
+
 
