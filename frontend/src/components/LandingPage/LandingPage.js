@@ -4,17 +4,32 @@ import { gapi } from "gapi-script";
 import "./LandingPage.css";
 import { getDatApiNinjas } from "../../network-requests";
 
-function LandingPage() {
+function LandingPage(props) {
   const [profile, setProfile] = useState(null);
   const clientId =
     "978546420366-2jbvrmamn5c4su29p12a35j25p9uo477.apps.googleusercontent.com";
 
-  const onSuccess = (res) => {
+  const onSuccess = async (res) => {
+    // fetch user from our database 
+    const data = {
+      email: res.profileObj.email,
+      full_name: res.profileObj.name,
+      img: res.profileObj.imageUrl
+    }
+
+    const profile = await fetch("http://localhost:3030/user/login", {
+      method: "POST",
+      headers: {
+          "Content-Type" : "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(res => res.json())
     // how long to be logged in
-    res.profileObj.ttl = Date.now() + 1000 * 60 * 60 * 24 * 21
-    setProfile(res.profileObj);
-    console.log("profile", res.profileObj, "thisIsLogin");
-    localStorage.setItem("profile", JSON.stringify(res.profileObj))
+    profile.ttl = Date.now() + 1000 * 60 * 60 * 24 * 21
+    setProfile(profile);
+    console.log("profile", profile, "thisIsLogin");
+    localStorage.setItem("profile", JSON.stringify(profile))
   };
 
   const onFailure = (err) => {
@@ -56,18 +71,18 @@ function LandingPage() {
         <>
           <div className="member">
             {/* make client username show up in welcome */}
-            <h1 className="Welcome"> 🎭 Welcome {profile.givenName} 🎭</h1>
+            <h1 className="Welcome"> 🎭 Welcome {profile.name} 🎭</h1>
             <h3 className="quotes">"{quote} "</h3>
           </div>
           <div className="googleInfo">
             <img
               className="profilePic"
-              src={profile.imageUrl}
+              src={profile.img}
               alt="user pic"
               referrerPolicy="no-referrer"
             />
             {/* <h3>Welcome {profile.givenName}</h3> */}
-            <p>{profile.name}</p>
+            <p>{profile.full_name}</p>
             <p>{profile.email}</p>
             <br />
             <GoogleLogout

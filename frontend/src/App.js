@@ -21,17 +21,12 @@ function App() {
 console.log(journal)
   return (
     <div className="App">
-            <LandingPage/>
-      {/* <Routes>
-          <Route/>
-
-      </Routes> */}
-    <Journal/>
-    {/* <Routes>
-        <Route path="/" element = {<LandingPage}/>}/>
+    
+    <Routes>
+        <Route path="/" element = {<LandingPage profile = {profile}/>}/>
         <Route path="/journal" element = {<Journal/>}/>
-        <Route path ="/calendar" element ={<Calendar/>}/>
-      </Routes> */}
+        <Route path ="/calendar" element ={<h1>Calendar</h1>}/>
+      </Routes>
     </div>
   );
 }
