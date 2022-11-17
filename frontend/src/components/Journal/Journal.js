@@ -16,7 +16,7 @@ export default function Journal({profile}) {
         {icon: faFaceSmile, class: 'happy', color: 'green'},
         {icon: faFaceMeh, class: 'meh', color: 'blue'},
         {icon: faFaceAngry, class: 'angry', color: 'red'},
-        {icon: faFaceSadCry, class: 'sad', color: 'light-blue'},
+        {icon: faFaceSadCry, class: 'sad', color: 'light-purple'},
     ]
     //Create a function to update state data based on input
     // function that submits Journal data to Api 
@@ -56,6 +56,7 @@ const onClickEmoji = (e, id) => {
     return <div>
         {step === 0 ?
             <div>
+               <h1> Which Emoji describes how you are feeling today?</h1>
                 {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
                 <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />
                 <FontAwesomeIcon className='Emojis Meh' icon={faFaceMeh} />
@@ -77,7 +78,7 @@ const onClickEmoji = (e, id) => {
                         {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
                     </form>
                 </div>
-                <button onClick={submitData}>Post</button>
+                <button id='post' onClick={submitData}>Post</button>
 
                
             </div>}
