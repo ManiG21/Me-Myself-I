@@ -1,0 +1,51 @@
+
+
+.container{
+    display: flex;
+    /* justify-content: center; */
+    margin: auto;
+    padding: 0;
+    grid-gap: auto;
+    /* border: 1px solid black; */
+}
+
+
+.slogan{
+    color: #7B287D;
+    text-shadow: gold 2px 2px 2px;
+}
+
+.profilePic{
+    border-radius: 50px;
+}
+
+.member{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: xxx-large;
+    color: #F7CB15;
+    text-shadow: #52489C 23px 1px 7px;
+    /* border: 1px solid red; */
+    width: 80vw;
+    
+    
+}
+
+.Welcome{
+    /* border: 1px solid black; */
+    word-spacing: 20px;
+   
+    
+    /* width: 90vw */
+}
+.quotes{
+    /* font-family: 'Fascinate', cursive; */
+    font-family: 'Hachi Maru Pop', cursive;
+    font-size: xx-large;
+    color:#52489C;
+    text-shadow:#F7CB15 5px 2px 3px;
+    /* F0D3F7 */
+}
+
