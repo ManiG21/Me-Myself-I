@@ -32,7 +32,7 @@ export default function Journal({profile}) {
     .then(res => res.json())
     .then(() => {
         window.alert('Your Journal has been posted!!😊😊');
-        navigate('/calendar')
+        navigate('/pie-chart')
     })
     // .then(res => (refreshData))
     }
@@ -55,7 +55,7 @@ const onClickEmoji = (e, id) => {
     }
     return <div>
         {step === 0 ?
-            <div>
+            <div className='jcontent'>
                <h1> Which Emoji describes how you are feeling today?</h1>
                 {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
                 <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />

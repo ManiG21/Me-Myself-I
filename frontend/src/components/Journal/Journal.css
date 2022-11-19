@@ -13,10 +13,17 @@ body {
 
 .Emojis {
 font-size: 100px ;
-padding: 2px;
+padding: 5px;
 border: 2px solid black;
+margin: 4px;
 
 
+}
+
+.Emojis:hover{
+    /* background-color:#0b8b04; */
+    box-shadow: 0px 10px 10px 10px rgba(248, 245, 245, 0.75);
+    transition: 0.7s;
 }
 
 .angry {
@@ -83,6 +90,10 @@ form input, form textarea {
     font-size: 30px;
     box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
 }
+
+/* .jcontent{
+    {animation-timing-function: ease-in;}
+} */
 
 h1 {
     font-size: 50px;
