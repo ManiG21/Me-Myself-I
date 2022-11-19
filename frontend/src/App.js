@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Journal from './components/Journal/Journal';
+// import Calendar from './components/Calendar/Calendar';
+// import LandingPage from './components/LandingPage/LandingPage';
+import Navbar from './components/Navbar/Navbar';
+import { Routes, Route } from "react-router-dom";
+import { getAllFromTable } from './components/networkRequests';
+import React, { useEffect, useState } from 'react'
+
 
 function App() {
+  const [journal, setJournal] = useState([])
+  const [profile, setProfile] = useState({id: 1})
+  const refreshData = ()=> {
+    getAllFromTable('journals')
+          .then(res => setJournal(res))
+  }
+  useEffect(() => {
+    refreshData()
+}, [])
+console.log(journal)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Navbar/>
+    <Routes>
+        {/* <Route path="/" element = {<LandingPage/>}/> */}
+        <Route path="/" element = {<h1>LandingPage</h1>}/>
+        <Route path="/journal"  element = {<Journal profile= {profile}/>}/>
+        <Route path ="/pie-chart" element ={<h1>Pie Chart</h1>}/>
+      </Routes>
     </div>
   );
 }
