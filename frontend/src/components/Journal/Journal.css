@@ -1,5 +1,5 @@
 body {
-    box-shadow: 3px blue;
+    /* box-shadow: 3px blue;
     background: rgba(181,222,238,1);
     background: -moz-linear-gradient(-45deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
     background: -webkit-gradient(left top, right bottom, color-stop(27%, rgba(181,222,238,1)), color-stop(31%, rgba(181,222,238,1)), color-stop(56%, rgba(42,191,229,1)), color-stop(82%, rgba(190,226,239,1)), color-stop(97%, rgba(190,226,239,1)));
@@ -7,7 +7,7 @@ body {
     background: -o-linear-gradient(-45deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
     background: -ms-linear-gradient(-45deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
     background: linear-gradient(135deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5deee', endColorstr='#bee2ef', GradientType=1 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5deee', endColorstr='#bee2ef', GradientType=1 ); */
      
 }
 

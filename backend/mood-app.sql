@@ -7,14 +7,14 @@ CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     full_name TEXT,
     age INT,
-    dob DATE,
+    dob TIMESTAMP,
     email TEXT
 );
 
 
 CREATE TABLE journals(
     id SERIAL PRIMARY KEY,
-    entry_time DATE,
+    entry_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     title TEXT,
     entry TEXT,
     color TEXT,
