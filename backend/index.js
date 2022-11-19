@@ -1,8 +1,11 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import express from 'express';
 import * as db from './queries.js';
 import cors from 'cors'
 const app = express()
 const PORT = 3030
+
 
 app.use(express.json())
 app.use(cors())

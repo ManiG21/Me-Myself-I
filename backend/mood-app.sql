@@ -7,14 +7,14 @@ CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     full_name TEXT,
     age INT,
-    dob DATE,
+    dob TIMESTAMP,
     email TEXT
 );
 
 
 CREATE TABLE journals(
     id SERIAL PRIMARY KEY,
-    entry_time DATE,
+    entry_time TIMESTAMP,
     title TEXT,
     entry TEXT,
     color TEXT,
@@ -26,6 +26,10 @@ CREATE TABLE journals(
 INSERT INTO users VALUES (DEFAULT, 'Bob', 22, '2000-03-10','bobisawesome@gmail.com');
 INSERT INTO users VALUES (DEFAULT, 'Simba', 17, '2005-05-05','simbaroar@gmail.com');
 INSERT INTO users VALUES (DEFAULT, 'Adelia', 20, '2002-05-20','adeliaiscute@gmail.com');
+INSERT INTO users VALUES (DEFAULT, 'Jungkook', 22, '2000-03-10','jkisawesome@gmail.com');
+INSERT INTO users VALUES (DEFAULT, 'Mufasa', 17, '2005-05-05','mufasa@gmail.com');
+INSERT INTO users VALUES (DEFAULT, 'Maya', 20, '2002-05-20','Mayaisok@gmail.com');
+
 
 
 -- JOURNALS--(DEFAULT, date, title, entry, color, emoji, user_id)

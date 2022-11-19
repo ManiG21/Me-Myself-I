@@ -1,11 +1,14 @@
 // import { json } from 'body-parser';
 import pg from 'pg'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const pool = new pg.Pool({
-    host: 'localhost',
-    user:'postgres',
-    password: 'postgres',
-    database: 'moodapp'
+    // host: 'localhost',
+    // user:'postgres',
+    // password: 'postgres',
+    // database: 'moodapp'
+    connectionString: process.env.DATABASE_CONNECTION
 });
 
 const allowTables = ['users', 'journals']
@@ -102,7 +105,7 @@ export const updateTable = (req, res) =>{
         if (error){
             throw error 
         }
-        res.results(200).json(results.rows)
+        res.status(200).json(results.rows)
     })
 }
 
@@ -113,6 +116,6 @@ export const getAllJournals =(req, res)=>{
         if (error){
             throw error 
         }
-        res.results(200).json(results.rows)
+        res.status(200).json(results.rows)
     })
 }
