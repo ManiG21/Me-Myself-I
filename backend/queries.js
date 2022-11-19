@@ -1,9 +1,10 @@
 // import { json } from 'body-parser';
 import pg from 'pg'
-import * as dotenv from 'dotenv'
+// see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as dotenv from 'dotenv' 
 dotenv.config()
 const pool = new pg.Pool({
- connectionString: process.env.DATABASE_CONNECTION
+   connectionString: process.env.DATABASE_CONNECTION
 });
 
 const allowTables = ['users', 'journals']
@@ -112,5 +113,33 @@ export const getAllJournals =(req, res)=>{
             throw error 
         }
         res.results(200).json(results.rows)
+    })
+}
+
+export const findOrCreateUser = (req, res) => {
+    pool.query(`SELECT * FROM users WHERE email = $1`, [req.body.email], (error, results) =>{
+        if (error){
+            throw error 
+        }
+        // if a user exists in database return results
+        if (results.rows.length)  
+            return res.status(200).json(results.rows[0])
+        // otherwise create a user and return that 
+        // keys of the name of all the columns for new data 
+        const keys = Object.keys(req.body).join(', ')
+        // values of all the data we are inserting 
+        const values = Object.values(req.body)
+        // ${1,2,....} dynamic data inserting into sql statement
+        const psqlInsert = values.map((key, i) => `$${i + 1}`).join(', ')
+        // console.log(`INSERT INTO ${tableName} (${keys}) VALUES (${psqlInsert}) RETURNING *`)
+        pool.query(`INSERT INTO users (${keys}) VALUES (${psqlInsert}) RETURNING *`, values, (error, results) => {
+            if (error) {
+                // console.log(error, '<--- error here')
+                throw error;
+            }
+            // console.log(results, "<--- result!")
+            res.status(200).json(results.rows[0])
+        })
+
     })
 }

@@ -13,9 +13,10 @@ app.get('/', function(req,res){
 
 app.get('/:tableName', db.getTable)
 app.get('/:tableName/:id', db.getTableById)
-app.get('/users/:id/journals', db.getAllJournals)
 // users at this id get all journal entries
-
+app.get('/users/:id/journals', db.getAllJournals)
+// find or create a user
+app.post('/user/login', db.findOrCreateUser)
 app.post ('/:tableName', db.addTable)
 app.put('/:tableName/:id', db.updateTable)
 

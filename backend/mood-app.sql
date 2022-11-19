@@ -8,7 +8,8 @@ CREATE TABLE users(
     full_name TEXT,
     age INT,
     dob TIMESTAMP,
-    email TEXT
+    email TEXT,
+    img TEXT 
 );
 
 

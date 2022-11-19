@@ -5,7 +5,6 @@ import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, f
 import { useNavigate } from "react-router-dom";
 
 
-
 export default function Journal({profile}) {
     const [data, setData] = useState({user_id: profile.id})
     const [step, setStep] = useState(0)
@@ -56,7 +55,7 @@ const onClickEmoji = (e, id) => {
     return <div>
         {step === 0 ?
             <div className='jcontent'>
-               <h1> Which Emoji describes how you are feeling today?</h1>
+               <h1 > Which Emoji describes how you are feeling today?</h1>
                 {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
                 <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />
                 <FontAwesomeIcon className='Emojis Meh' icon={faFaceMeh} />

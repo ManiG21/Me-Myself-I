@@ -95,7 +95,7 @@ form input, form textarea {
     {animation-timing-function: ease-in;}
 } */
 
-h1 {
+.jcontent h1 {
     font-size: 50px;
     text-shadow: 3px 3px 2px rgba(199, 194, 208, 1);
     background: rgba(248,80,50,1);
