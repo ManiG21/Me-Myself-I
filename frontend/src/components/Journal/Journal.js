@@ -55,7 +55,7 @@ const onClickEmoji = (e, id) => {
     return <div>
         {step === 0 ?
             <div className='jcontent'>
-               <h1> Which Emoji describes how you are feeling today?</h1>
+               <h1 > Which Emoji describes how you are feeling today?</h1>
                 {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
                 <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />
                 <FontAwesomeIcon className='Emojis Meh' icon={faFaceMeh} />

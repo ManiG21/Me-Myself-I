@@ -7,6 +7,7 @@ import { getAllFromTable } from "./components/networkRequests";
 import React, { useEffect, useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const [journal, setJournal] = useState([]);
@@ -68,6 +69,7 @@ function App() {
 
   return (
     <div className="App">
+
       {!profile ? (
         <>
           <div className="intro">
@@ -92,6 +94,8 @@ function App() {
           />
         </>
       ) : (
+        <>
+        <Navbar/>
         <Routes>
           <Route
             path="/"
@@ -109,8 +113,9 @@ function App() {
             exact
             element={<Journal profile={profile} />}
           />
-          <Route path="/calendar" exact element={<h1>Calendar</h1>} />
+          <Route path="/pie-chart" exact element={<h1>Calendar</h1>} />
         </Routes>
+      </>
       )}
     </div>
   );
