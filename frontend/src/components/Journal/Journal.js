@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Journal.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faFaceAngry, faFaceMeh, faFaceSadCry, faFaceSmile, faFaceSmileBeam, } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
-
+import {getDataApiGiphy} from "../../network-requests"
 
 
 export default function Journal({profile}) {
     const [data, setData] = useState({user_id: profile.id})
     const [step, setStep] = useState(0)
     const navigate = useNavigate();
+    const [gif, setGif] = useState();
 
     const emojis = [
         {icon: faFaceSmileBeam, class: 'excited', color: 'gold'},
@@ -32,6 +33,11 @@ export default function Journal({profile}) {
     .then(res => res.json())
     .then(() => {
         window.alert('Your Journal has been posted!!😊😊');
+        // get dataApiGiphy with data.emoji
+        // getDataApiGiphy
+        // randomly pick 1 of 25 that are returned
+        // set gif to that one gif, setGif
+        // ternary in return looking at gif variable  
         navigate('/calendar')
     })
     // .then(res => (refreshData))
@@ -53,6 +59,14 @@ const onClickEmoji = (e, id) => {
         console.log(e.target)
         // (e.target.value)
     }
+
+    
+    useEffect(() => {
+        getDataApiGiphy("dog").then((res) => {
+            console.log(res);
+        })
+    })
+
     return <div>
         {step === 0 ?
             <div>
@@ -79,7 +93,7 @@ const onClickEmoji = (e, id) => {
                 </div>
                 <button onClick={submitData}>Post</button>
 
-               
+               {/* < Gif /> */}
             </div>}
 
     </div>

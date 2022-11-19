@@ -8,19 +8,14 @@
 
 .container{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin: auto;
     padding: 0;
-    grid-gap: 180px;
+    grid-gap: auto;
+    /* border: 1px solid black; */
 }
 
-.intro{
-    color: #2A2D34;
-    text-shadow: #009DDC 1px 1px 2px;
-    font-family: 'Bubblegum Sans';
-    font-size: xx-large;
-    font-variant: small-caps;
-}
+
 .slogan{
     color: #7B287D;
     text-shadow: gold 2px 2px 2px;
@@ -31,32 +26,32 @@
 }
 
 .member{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     font-family: 'Bubblegum Sans', cursive;
     font-size: xxx-large;
-    color: white;
-    text-shadow: #FF0022 1px 2px 3px;
+    color: #F7CB15;
+    text-shadow: #52489C 23px 1px 7px;
     /* border: 1px solid red; */
-    width: 80rem;
+    width: 80vw;
+    
     
 }
 
 .Welcome{
-    word-spacing: 80px;
+    /* border: 1px solid black; */
+    word-spacing: 20px;
+   
+    
+    /* width: 90vw */
 }
 .quotes{
     /* font-family: 'Fascinate', cursive; */
     font-family: 'Hachi Maru Pop', cursive;
     font-size: xx-large;
-    color: green;
-    text-shadow: gold  1px 2px 3px;
+    color:#52489C;
+    text-shadow:#F7CB15 5px 2px 3px;
     /* F0D3F7 */
 }
 
-.googleInfo{
-    /* border: 1px solid black; */
-    width: auto;
-    height: auto;
-    margin: 15px;
-
-
-}

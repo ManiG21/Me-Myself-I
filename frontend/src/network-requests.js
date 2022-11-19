@@ -11,8 +11,12 @@ export const getDatApiNinjas = (route, query) => {
     .then(res => res.json())
 }
 
-// export const getDataApiGiphy = (route, query) => {
-//     console.log(route, query, ``)
-// }
+export const getDataApiGiphy = (search) => {
+    console.log(search,`https://api.giphy.com/v1/gifs/search?api_key=Gdb5esWtKhpcp529ExKdmxd6QIIgGkx6&q=&limit=25&offset=0&rating=g&lang=en`)
+
+    return fetch (`https://api.giphy.com/v1/gifs/search?api_key=Gdb5esWtKhpcp529ExKdmxd6QIIgGkx6&q=${search}&limit=25&offset=0&rating=g&lang=en`,{
+    })
+    .then(res => res.json())
+}
 
 
