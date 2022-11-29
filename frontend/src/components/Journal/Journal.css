@@ -1,4 +1,4 @@
-body {
+/* body { */
     /* box-shadow: 3px blue;
     background: rgba(181,222,238,1);
     background: -moz-linear-gradient(-45deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
@@ -9,13 +9,25 @@ body {
     background: linear-gradient(135deg, rgba(181,222,238,1) 27%, rgba(181,222,238,1) 31%, rgba(42,191,229,1) 56%, rgba(190,226,239,1) 82%, rgba(190,226,239,1) 97%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5deee', endColorstr='#bee2ef', GradientType=1 ); */
      
-}
+/* } */
 
 .Emojis {
 font-size: 100px ;
 padding: 5px;
 border: 2px solid black;
 margin: 4px;
+position: relative; 
+    animation: 3s slidein;
+  /*   background: blue;/ */
+  }
+  
+  @keyframes slidein {
+    0% {
+      left:-2000px;
+    }
+    100% {
+      left: 0;
+    }
 
 
 }
@@ -60,6 +72,10 @@ margin: 4px;
     cursor: pointer;
 
 }
+
+
+    
+  
 
 textarea {
     width: 500px;
@@ -106,5 +122,16 @@ background: -o-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 
 background: -ms-linear-gradient(-45deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(245,42,13,1) 53%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
 background: linear-gradient(135deg, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 50%, rgba(246,41,12,1) 51%, rgba(245,42,13,1) 53%, rgba(240,47,23,1) 71%, rgba(231,56,39,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
-
+position: relative; 
+    animation: 3s slidein;
+  /*   background: blue;/ */
+  }
+  
+  @keyframes slidein {
+    0% {
+      left:-2000px;
+    }
+    100% {
+      left: 0;
+    }
 }
