@@ -33,7 +33,6 @@ export default function Journal({profile}) {
         window.alert('Your Journal has been posted!!😊😊');
         navigate('/pie-chart')
     })
-    // .then(res => (refreshData))
     }
     
 // function that updates the emoji in our data
@@ -50,18 +49,11 @@ const onClickEmoji = (e, id) => {
     const updateData = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
         console.log(e.target)
-        // (e.target.value)
     }
     return <div>
         {step === 0 ?
             <div className='jcontent'>
                <h1 > Which Emoji describes how you are feeling today?</h1>
-                {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
-                <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />
-                <FontAwesomeIcon className='Emojis Meh' icon={faFaceMeh} />
-                <FontAwesomeIcon className='Emojis Angry' icon={faFaceAngry} />
-                <FontAwesomeIcon className='Emojis Sad' icon={faFaceSadCry} />
-                <FontAwesomeIcon className='Emojis Sad' icon={faAngleDoubleLeft} /> */}
                 {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
@@ -83,7 +75,4 @@ const onClickEmoji = (e, id) => {
             </div>}
 
     </div>
-    //Add emojs using font awesome
-    //Add color and Styling 
-    //Add input for Title an Entry
 }
