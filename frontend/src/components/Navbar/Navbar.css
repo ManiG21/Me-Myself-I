@@ -1,12 +1,12 @@
 #logo {
     /* display: flex;
     align-self: flex-start; */
-    height: 150px;
+    height: 70px;
     
 }
 
 .logo{
-    height: 150px;
+    height: 7vh;
     box-sizing: content-box;
 }
 .nav-links{
@@ -17,9 +17,9 @@
     
 }
 
-#paths{
+/* #paths{
     box-shadow: 0px 0px 2px 2px rgb(0,0,0);
-}
+} */
 
 .button:hover {
     background-color:#002ead;
@@ -46,4 +46,5 @@
     border-radius:20px;
     font-size: 50px;
     cursor: pointer;
+    
 }
