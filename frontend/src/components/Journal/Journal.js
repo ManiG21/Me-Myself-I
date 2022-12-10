@@ -21,7 +21,7 @@ export default function Journal({profile}) {
     // function that submits Journal data to Api 
     const submitData = () => {
         //Send data to api using fetch
-        fetch("http://localhost:3030/journals", {
+        fetch("http://ec2-18-234-227-220.compute-1.amazonaws.com:3030/journals", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json",
