@@ -1,7 +1,6 @@
-
-
 .container{
     display: flex;
+    justify-content: space-evenly;
     /* justify-content: center; */
     margin: auto;
     padding: 0;
@@ -11,26 +10,28 @@
 
 
 .slogan{
-    color: #7B287D;
-    text-shadow: gold 2px 2px 2px;
+    color: #004E67;
+    text-shadow: white 1px 1px 1px;
+    max-width: 900px;
+    text-align: left;
+    
+    
 }
 
 .profilePic{
     border-radius: 50px;
 }
 
-.member{
+.member-Welcome{
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Bubblegum Sans', cursive;
     font-size: xxx-large;
-    color: #F7CB15;
-    text-shadow: #52489C 23px 1px 7px;
+    color: #004E67;
+    text-shadow: #F39530 3px 1px 3px;
     /* border: 1px solid red; */
-    width: 80vw;
-    
-    
+    width: 80vw;  
 }
 
 .Welcome{
@@ -44,8 +45,12 @@
     /* font-family: 'Fascinate', cursive; */
     font-family: 'Hachi Maru Pop', cursive;
     font-size: xx-large;
-    color:#52489C;
-    text-shadow:#F7CB15 5px 2px 3px;
-    /* F0D3F7 */
+    color: #004E67;
+    text-shadow: white 1px 1px 1px;
+    
 }
 
+.googleInfo{
+margin: 2px;
+/* padding-right: 60px; */
+}

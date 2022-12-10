@@ -1,14 +1,15 @@
-import {Routes, Route} from 'react-router-dom';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
 import Journal from './components/Journal/Journal';
+import Navbar from './components/Navbar/Navbar';
+import {Routes, Route} from 'react-router-dom';
 import PieChart from './components/PieChart/PieChart.js'
 // import Calendar from './components/Calendar/Calendar';
 import { getAllFromTable } from "./components/networkRequests";
 import React, { useEffect, useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
-import Navbar from './components/Navbar/Navbar';
+import logo from './components/Navbar/Me Myself & I Logo.gif'
 
 function App() {
   const [journal, setJournal] = useState([]);
@@ -75,10 +76,13 @@ function App() {
         <>
           <div className="intro">
             <div className="content_container">
-              <h1> Me Myself & I </h1>
+            <img id="Logo" src={logo} alt='logo'></img>
               <h2 className="slogan">
                 {" "}
-                A mental health home you never knew you needed
+                 A mental health app to help members process their emotions. Users can select an emoji 
+                 to reflect the emotional state, that they are currently in and have the option to write in the 
+                  provided journal. The emoji inputs are then sent to the pie chart where your emoji inputs are stored and displayed 😃
+
               </h2>
             </div>
           </div>

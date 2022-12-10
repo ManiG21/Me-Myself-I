@@ -20,13 +20,12 @@ function LandingPage({ profile, clientId, logOut }) {
   return (
     <div className="container">
       
-          <div className="member">
+          <div className="member-Welcome">
             {/* make client username show up in welcome */}
             <h1 className= "Welcome">  Welcome {firstName}  </h1>
             <h3 className="quotes">"{quote} "</h3>
           </div>
           <div className="googleInfo">
-            <p>Google Log In goes to Navbar</p>
             <img
               className="profilePic"
               src={profile.img}

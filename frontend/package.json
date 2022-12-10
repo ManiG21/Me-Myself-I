@@ -22,6 +22,7 @@
   },
   "scripts": {
     "type": "module",
+    "start:old": "react-scripts --openssl-legacy-provider start",
     "start": "react-scripts start --openssl-legacy-provider",
     "build": "react-scripts build",
     "test": "react-scripts test",
