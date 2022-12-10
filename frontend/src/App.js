@@ -46,7 +46,7 @@ function App() {
       img: res.profileObj.imageUrl,
     };
 
-    const profile = await fetch("http://ec2-18-234-227-220.compute-1.amazonaws.com:3030/user/login", {
+    const profile = await fetch("https://dsewdfflaa4b0.cloudfront.net/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
