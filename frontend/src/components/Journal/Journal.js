@@ -50,14 +50,14 @@ const onClickEmoji = (e, id) => {
         setData({ ...data, [e.target.name]: e.target.value })
         console.log(e.target)
     }
-    return <div>
+    return <div className='main-journal-container'>
         {step === 0 ?
-            <div className='jcontent'>
-               <h1 > Which Emoji describes how you are feeling today?</h1>
+            <div>
+               <h1 className='orange-header' > Which Emoji describes how you are feeling today?</h1>
                 {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
-                 <h1>Journal</h1>
+                 <h1 className='orange-header'>Journal</h1>
                 <div className='form-container'>
                     <form>
                         {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}

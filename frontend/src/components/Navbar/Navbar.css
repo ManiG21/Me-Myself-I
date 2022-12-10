@@ -35,8 +35,11 @@
     /* background-color: #004E67; */
     /* background-color: #84CAE7; */
     background-color: linear-gradient(132deg, rgb(227, 244, 253) 0%, #84cae7 100%);
-    border-bottom: 4px solid #004E67 ;
-    border-width: 100%;
+    /* border-bottom: 4px solid #004E67 ; */
+    /* border-width: 100%; */
+    filter: blur(1);
+    box-shadow: rgb(0, 0, 0) 1px 1px 4px;
+    position: sticky;
     
   
     /* background: rgba(248,80,50,1);
@@ -57,14 +60,14 @@
     background-color:#004E67;
     /* color: #fff; */
     /* text-shadow: #f39530 2px 2px 2px; */
-    text-shadow: black 1px 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 4px;
     /* border-collapse: separate;
     /* 
    border-color: #974900; */
    color: white;
-   border-radius:20px;
+   border-radius: 15px;
    border: none;
-   
+   padding: 8px;
     font-size: 30px;
     cursor: pointer;
     margin: 30px;
