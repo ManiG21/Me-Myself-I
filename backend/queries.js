@@ -101,7 +101,7 @@ export const updateTable = (req, res) =>{
         if (error){
             throw error 
         }
-        res.results(200).json(results.rows)
+        res.status(200).json(results.rows)
     })
 }
 
@@ -112,7 +112,7 @@ export const getAllJournals =(req, res)=>{
         if (error){
             throw error 
         }
-        res.results(200).json(results.rows)
+        res.status(200).json(results.rows)
     })
 }
 

@@ -1,3 +1,11 @@
+export const api = "http://localhost:3030"
+
+
+
+export const getAllFromTable = async (table)=>{
+    const data = await fetch(`${api}/${table}`)
+    return data.json()
+}
 // API key for google oAuth - 952817535193-1lhs434tqvkj2q3fl92bgpb3d2gs6uet.apps.googleusercontent.com
 // giphy API key - Gdb5esWtKhpcp529ExKdmxd6QIIgGkx6
 // API ninjas - 3h1Ig2eNjPjZEqW4UBdwbQ==SbV2SyMnNWJZQq0D
