@@ -21,7 +21,7 @@ export default function Journal({profile}) {
     // function that submits Journal data to Api 
     const submitData = () => {
         //Send data to api using fetch
-        fetch("http://localhost:3030/journals", {
+        fetch("http://ec2-18-234-227-220.compute-1.amazonaws.com:3030/journals", {
         method: "POST",
         headers: {
             "Content-Type" : "application/json",
@@ -33,7 +33,6 @@ export default function Journal({profile}) {
         window.alert('Your Journal has been posted!!😊😊');
         navigate('/pie-chart')
     })
-    // .then(res => (refreshData))
     }
     
 // function that updates the emoji in our data
@@ -50,22 +49,15 @@ const onClickEmoji = (e, id) => {
     const updateData = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
         console.log(e.target)
-        // (e.target.value)
     }
-    return <div>
+    return <div className='main-journal-container'>
         {step === 0 ?
-            <div className='jcontent'>
-               <h1 > Which Emoji describes how you are feeling today?</h1>
-                {/* <FontAwesomeIcon className='Emojis Excited' icon={faFaceSmileBeam} />
-                <FontAwesomeIcon className='Emojis Happy' icon={faFaceSmile} />
-                <FontAwesomeIcon className='Emojis Meh' icon={faFaceMeh} />
-                <FontAwesomeIcon className='Emojis Angry' icon={faFaceAngry} />
-                <FontAwesomeIcon className='Emojis Sad' icon={faFaceSadCry} />
-                <FontAwesomeIcon className='Emojis Sad' icon={faAngleDoubleLeft} /> */}
+            <div>
+               <h1 className='orange-header' > Which Emoji describes how you are feeling today?</h1>
                 {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
-                 <h1>Journal</h1>
+                 <h1 className='orange-header'>Journal</h1>
                 <div className='form-container'>
                     <form>
                         {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}
@@ -83,7 +75,4 @@ const onClickEmoji = (e, id) => {
             </div>}
 
     </div>
-    //Add emojs using font awesome
-    //Add color and Styling 
-    //Add input for Title an Entry
 }
