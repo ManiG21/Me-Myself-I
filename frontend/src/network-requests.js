@@ -1,4 +1,4 @@
-export const api = "http://ec2-18-234-227-220.compute-1.amazonaws.com:3030"
+export const api = "https://dsewdfflaa4b0.cloudfront.net"
 
 
 
