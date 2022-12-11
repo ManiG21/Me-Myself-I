@@ -37,8 +37,6 @@ export default function Journal({profile}) {
     
 // function that updates the emoji in our data
 const onClickEmoji = (e, id) => {
-    // const id = e.target.dataset.id
-    // const id = e.target['data-id']
     // Update Journal Data with an emoji
     setData({ ...data, emoji: emojis[id].class, color: emojis[id].color })
     console.log(id)
@@ -60,13 +58,9 @@ const onClickEmoji = (e, id) => {
                  <h1 className='orange-header'>Write a Journal entry to describe what happened today?</h1>
                 <div className='form-container'>
                     <form>
-                        {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}
                         <input maxLength="40" value={data.title}  placeholder='Title' name='title' onChange={updateData}></input>
                         <break></break>
-                        {/* <label htmlFor = 'entry'>Title Max 500 Characters</label> */}
                         <textarea maxLength="400"   placeholder='Entry' value={data.entry} name='entry' onChange={updateData}></textarea>
-                        {/* <input value={data.color} name='color'onChange = {updateData}></input> */}
-                        {/* <input value={data.emoji} name='emoji' onClick={updateData}></input> */}
                     </form>
                 </div>
                 <button id='post' onClick={submitData}>Post</button>
