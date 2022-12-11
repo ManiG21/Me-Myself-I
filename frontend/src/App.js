@@ -4,7 +4,6 @@ import Journal from './components/Journal/Journal';
 import Navbar from './components/Navbar/Navbar';
 import {Routes, Route} from 'react-router-dom';
 import PieChart from './components/PieChart/PieChart.js'
-// import Calendar from './components/Calendar/Calendar';
 import { getAllFromTable } from "./components/networkRequests";
 import React, { useEffect, useState } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";

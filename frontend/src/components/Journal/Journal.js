@@ -57,7 +57,7 @@ const onClickEmoji = (e, id) => {
                 {emojis.map((emoji, id) => <FontAwesomeIcon data-id={id} onClick={(e)=> onClickEmoji(e, id)} className={`Emojis ${emoji.class}`} icon={emoji.icon} color={emoji.color} /> )}
             </div> :
             <div>
-                 <h1 className='orange-header'>Journal</h1>
+                 <h1 className='orange-header'>Write a Journal entry to describe what happened today?</h1>
                 <div className='form-container'>
                     <form>
                         {/* <label htmlFor = 'title'>Title Max 40 Characters</label> */}

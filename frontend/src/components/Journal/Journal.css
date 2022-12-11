@@ -1,70 +1,57 @@
-
-
 .Emojis {
-font-size: 100px ;
-padding: 5px;
-border: 2px solid black;
-margin: 4px;
-position: relative; 
+    font-size: 100px;
+    padding: 5px;
+    border: 2px solid black;
+    margin: 4px;
+    position: relative;
     animation: 3s slidein;
-  /*   background: blue;/ */
-  }
-  
-  @keyframes slidein {
-    0% {
-      left:-2000px;
-    }
-    100% {
-      left: 0;
-    }
-
-
 }
 
-.Emojis:hover{
-    /* background-color:#0b8b04; */
+@keyframes slidein {
+    0% {
+        left: -2000px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.Emojis:hover {
     box-shadow: 0px 10px 10px 10px rgba(248, 245, 245, 0.75);
     transition: 0.7s;
 }
 
 .angry {
     color: red;
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
     cursor: pointer;
 
 }
 
 .excited {
     color: goldenrod;
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
     cursor: pointer;
 
 }
 
 .happy {
     color: rgb(3, 242, 3);
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
     cursor: pointer;
-
-
 }
+
 .meh {
     color: blue;
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
     cursor: pointer;
-
 }
+
 .sad {
-    /* color: lightskyblue; */
     color: rgb(195, 102, 248);
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
     cursor: pointer;
-
 }
-
-
-    
-  
 
 textarea {
     width: 500px;
@@ -79,50 +66,45 @@ form {
     justify-content: center;
     padding-bottom: 10px;
 }
-.form-container{
+
+.form-container {
     display: flex;
     justify-content: center;
-    
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
-
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
 }
 
 #post {
     font-size: 30px;
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 10px 1px rgba(0, 0, 0, 0.75);
 }
 
-/* .jcontent{
-    {animation-timing-function: ease-in;}
-} */
-
 .main-journal-container .orange-header {
-    font-size: 50px;
+    font-size: 60px;
     color: white;
     margin-top: 0px;
     margin-bottom: 40px;
-    /* text-shadow: 3px 3px 2px rgba(199, 194, 208, 1); */
-    text-shadow: 3px 3px 2px  #004E67;
+    text-shadow: 3px 3px 2px #004E67;
     padding: 40px;
-    background-color:#F39530;
+    background-color: #F39530;
     animation: 3s slidein;
-  /*   background: blue;/ */
-  }
-  
-  @keyframes slidein {
+}
+
+@keyframes slidein {
     0% {
-      left:-2000px;
+        left: -2000px;
     }
+
     100% {
-      left: 0;
+        left: 0;
     }
 }
 
-.main-journal-container .card{
+.main-journal-container .card {
     background: white;
     padding: 20px;
     border: 1px solid black;
